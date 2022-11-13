@@ -1,0 +1,21 @@
+<button class="btn btn-primary" [routerLink]="''">Back</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Acceptance Criteria</th>
+      <th scope="col">Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ticket of tickets; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ ticket.name }}</td>
+      <td>{{ ticket.description }}</td>
+      <td>{{ ticket.acceptance_criteria }}</td>
+      <td>{{ ticket.priority }}</td>
+    </tr>
+  </tbody>
+</table>

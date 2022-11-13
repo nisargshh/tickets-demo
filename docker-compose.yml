@@ -1,0 +1,19 @@
+version: '2'
+services:
+  server:
+    build: 
+      context: ./tickets-backend
+      dockerfile: dockerfile
+    container_name: server
+    ports:
+      - 8080:8080
+
+  ui:
+    build: 
+      context: ./tickets-frontend
+      dockerfile: dockerfile
+    container_name: ui
+    ports:
+      - 80:80
+    links:
+      - server
